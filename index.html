@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Result Lookup</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Student Result Lookup</h1>
+    <p class="sub">Select Class → Division → Roll No. to view your result</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="field">
+        <label for="classSelect">Class</label>
+        <select id="classSelect" disabled>
+          <option value="">Loading…</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="divSelect">Division</label>
+        <select id="divSelect" disabled>
+          <option value="">Select class first</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="rollSelect">Roll No.</label>
+        <select id="rollSelect" disabled>
+          <option value="">Select class & division first</option>
+        </select>
+      </div>
+
+      <button id="clearBtn" class="ghost" type="button" aria-label="Clear filters">Clear</button>
+    </section>
+
+    <section id="status" class="status" role="status" aria-live="polite">
+      <span>Fetching data…</span>
+    </section>
+
+    <section id="resultCard" class="card hidden">
+      <div class="card-head">
+        <h2>Result</h2>
+        <button id="printBtn" class="ghost small" type="button">Print</button>
+      </div>
+      <div class="table-wrap">
+        <table id="resultTable">
+          <!-- Headers + rows injected by JS -->
+        </table>
+      </div>
+    </section>
+
+    <section id="noMatch" class="card muted hidden">
+      <p>No record found. Please check your selections.</p>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <small>&copy; all Rights Reserved I devloped by Resultwala ❤</small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
